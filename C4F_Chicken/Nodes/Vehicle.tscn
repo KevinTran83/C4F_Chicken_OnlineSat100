@@ -1,0 +1,69 @@
+[gd_scene load_steps=9 format=3 uid="uid://dlul25m1hp4f6"]
+
+[ext_resource type="Script" path="res://C4F_Chicken/Scripts/Vehicle.gd" id="1_m00pb"]
+[ext_resource type="Texture2D" uid="uid://g4jhi4kkqqns" path="res://C4F_Chicken/Sprites/Cars.png" id="2_d25qc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nhty1"]
+atlas = ExtResource("2_d25qc")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08qgi"]
+atlas = ExtResource("2_d25qc")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fj8xr"]
+atlas = ExtResource("2_d25qc")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8acs1"]
+atlas = ExtResource("2_d25qc")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4gu4e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nhty1")
+}],
+"loop": true,
+"name": &"Aqua",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08qgi")
+}],
+"loop": true,
+"name": &"Orange",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fj8xr")
+}],
+"loop": true,
+"name": &"Purple",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8acs1")
+}],
+"loop": true,
+"name": &"White",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rwsuc"]
+size = Vector2(20, 50)
+
+[node name="Vehicle" type="Area2D"]
+scale = Vector2(2, 2)
+script = ExtResource("1_m00pb")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_4gu4e")
+animation = &"White"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_rwsuc")
