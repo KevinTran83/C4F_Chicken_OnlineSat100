@@ -139,7 +139,6 @@ vertical_alignment = 1
 autostart = true
 
 [connection signal="area_entered" from="Player" to="Player" method="respawn"]
-[connection signal="on_hit" from="Player" to="." method="resetScore"]
 [connection signal="area_entered" from="Pavement_Left" to="." method="_on_pavement_left_body_entered"]
 [connection signal="body_entered" from="Pavement_Left" to="." method="_on_pavement_left_body_entered"]
 [connection signal="area_entered" from="Pavement_Right" to="." method="pavement_right"]

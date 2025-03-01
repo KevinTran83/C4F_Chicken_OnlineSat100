@@ -14,3 +14,7 @@ config/name="C4F_Chicken"
 run/main_scene="res://C4F_Chicken/Nodes/Main.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
+
+[global_group]
+
+Car=""

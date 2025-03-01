@@ -21,3 +21,14 @@ func _process(delta: float) -> void:
     or Input.is_key_pressed(KEY_W) or Input.is_key_pressed(KEY_S):
            sprite.play("Running")
     else : sprite.play("Idle")
+
+var spawnPosition : Vector2
+
+func _ready() -> void : spawnPosition = position
+
+signal on_hit()
+
+func respawn(other : Area2D) -> void:
+    if not other.is_in_group("Car") : return
+    position = spawnPosition
+    on_hit.emit()
